@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Arts in Schools Poll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .poll-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #yes-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+        }
+
+        #no-btn {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+        }
+
+        .results {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="poll-container">
+    <h2>Do you think martial arts should be allowed in schools?</h2>
+    <button id="yes-btn" onclick="vote('yes')">Yes</button>
+    <button id="no-btn" onclick="vote('no')">No</button>
+
+    <div class="results" id="results">
+        <!-- Results will be displayed here -->
+    </div>
+</div>
+
+<script>
+    let yesVotes = 0;
+    let noVotes = 0;
+
+    function vote(choice) {
+        alert("You voted: " + choice);
+
+        // Update vote counts
+        if (choice === 'yes') {
+            yesVotes++;
+        } else if (choice === 'no') {
+            noVotes++;
+        }
+
+        // Update the results display
+        updateResults();
+    }
+
+    function updateResults() {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `<p>Results:</p><p>Yes: ${yesVotes}</p><p>No: ${noVotes}</p>`;
+    }
+</script>
+
+</body>
+</html>
